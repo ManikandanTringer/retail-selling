@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import './App.css';
+import Shops from './compontents/Shops';
 
 function App() {
+  const id=useSelector((state)=>state.id)
+  const name=useSelector((state)=>state.name)
+  const dispatch=useDispatch();
+  // const addItem=()=>{
+  //   dispatch({type:'ADD',payload:{id:1,name:"soap",price:30,}})
+  // }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h1>{id}</h1>
+        <h1>{name}</h1>
+        {/* <button onClick={()=>console.log('added')}>Add</button> */}
+        <Shops />
     </div>
   );
 }
